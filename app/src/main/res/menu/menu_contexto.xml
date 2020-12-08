@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Atualizar cadastro" android:onClick="atualizar"/>
+    <item android:title="Ver Serviço" android:onClick="ServicoCadastrado"/>
+    <item android:title="@string/menu_Atual" android:onClick="salvarServico"  />
+    <item android:title="@string/menu_Excluir" android:onClick="Excluir" />
+
+
+
+</menu>

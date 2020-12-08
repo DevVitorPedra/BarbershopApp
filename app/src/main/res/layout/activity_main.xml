@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btnPesquisa"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="Pesquisar"
+        android:text="Pesquisar Clientes"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:onClick="Cadastrar"
+        android:text="Adicionar Clientes"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_menu_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPesquisa" />
+
+    <Button
+        android:id="@+id/btnAgenda"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:text="Verificar Agenda"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_menu_today"
+        app:iconPadding="8dp"
+        app:iconTint="#FFFFFF"
+        app:iconTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+    <Button
+        android:id="@+id/btnControle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:onClick="Controle"
+        android:text="Controle de Serviços"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_menu_agenda"
+        app:iconPadding="8dp"
+        app:iconTint="#FFFFFF"
+        app:iconTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgenda" />
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

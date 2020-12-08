@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controle">
+    <TextView
+        android:id="@+id/txtCorteTesoura"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/txtCorte"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/txtCorteMaquina"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorteTesoura"
+        tools:text="@string/txtCMaquina"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtBarba"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorteMaquina"
+        tools:text="@string/txtBarba"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtAcabCabelo"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBarba"
+        tools:text="@string/txtACabelo"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtAcabBarba"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcabCabelo"
+        tools:text="@string/txtAcabBarba"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtSobrancelha"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcabBarba"
+        tools:text="@string/txtSobrancelha"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtSelagem"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSobrancelha"
+        tools:text="@string/txtSelagem"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtProgressiva"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSelagem"
+        tools:text="@string/txtProgressiva"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtCamuCabelo"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProgressiva"
+        tools:text="@string/txtCamuCabelo"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/txtCamuBarba"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCamuCabelo"
+        tools:text="@string/txtCamuBarba" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
