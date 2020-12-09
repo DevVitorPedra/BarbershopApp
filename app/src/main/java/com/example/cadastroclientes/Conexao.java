@@ -20,6 +20,7 @@ public class Conexao extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE cliente (Id Integer primary key autoincrement, "+
                 "nome varchar(50),data varchar(15), telefone varchar (15),bairro varchar (15), lazer varchar (20), obs varchar(200), topete varchar(15), topo varchar(15), lateral varchar(15), Textura varchar(15)," +
                 "encaixe varchar(15), acabamento varchar(15), taper varchar (15), observacao varchar (250))");
+        db.execSQL("CREATE TABLE producao(id Integer primary key autoincrement,servico varchar(30)) ");
 
       //  db.execSQL("CREATE TABLE servico(nome  varchar(50) primary key unique,data varchar(15), topete varchar(15), topo varchar(15), lateral varchar(15), Textura varchar(15), " +
       //  "encaixe varchar (15), acabamento varchar(15), taper varchar (15), observacao varchar (250))" );
@@ -33,3 +34,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
 }
+
+//todo
+// criando banco de dados para inserir no recycler view,
+//montar botões e recycler

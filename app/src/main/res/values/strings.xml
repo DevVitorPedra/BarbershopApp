@@ -49,11 +49,10 @@
     <string name="txtCorte">Corte Tesoura</string>
     <string name="txtCMaquina">Corte Máquina</string>
     <string name="txtBarba">Barba</string>
-    <string name="txtACabelo">Acabamento Cabelo</string>
-    <string name="txtAcabBarba">Acabamento Barba</string>
+    <string name="txtACabelo">Acabamentos</string>
     <string name="txtSobrancelha">Sobrancelha</string>
     <string name="txtSelagem">Selagem</string>
     <string name="txtProgressiva">Progressiva</string>
-    <string name="txtCamuCabelo">Camuflagem Cabelo</string>
-    <string name="txtCamuBarba">Camuflagem Barba</string>
+    <string name="txtCamuCabelo">Camuflagem</string>
+    <string name="txtCorInf">Corte Infantil</string>
 </resources>

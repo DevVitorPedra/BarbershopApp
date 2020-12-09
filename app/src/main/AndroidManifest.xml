@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CadastroClientes">
-        <activity android:name=".Controle"></activity>
+        <activity android:name=".deuruim"></activity>
+        <activity android:name=".Controle" />
         <activity android:name=".ControleServicos" />
         <activity android:name=".Agenda" />
         <activity android:name=".ExibirFotos" />

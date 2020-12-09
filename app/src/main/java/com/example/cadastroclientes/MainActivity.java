@@ -30,4 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Intent CS = new Intent(MainActivity.this, Controle.class);
         startActivity(CS);
     }
+
+
 }
+

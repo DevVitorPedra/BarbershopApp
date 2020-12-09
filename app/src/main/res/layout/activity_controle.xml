@@ -4,116 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".Controle">
-    <TextView
-        android:id="@+id/txtCorteTesoura"
+
+    <Button
+        android:id="@+id/btnCorTes"
         android:layout_width="133dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCorTes"
+        android:text="@string/txtCorte"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/txtCorte"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/txtCorteMaquina"
+    <Button
+        android:id="@+id/btnCorMaq"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCorMaq"
+        android:text="@string/txtCMaquina"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorteTesoura"
-        tools:text="@string/txtCMaquina"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
-
-    <TextView
-        android:id="@+id/txtBarba"
+        app:layout_constraintTop_toBottomOf="@id/btnCorTes" />
+    <Button
+        android:id="@+id/btnBarba"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnCorMaq"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorteMaquina"
-        tools:text="@string/txtBarba"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:text="@string/txtBarba"/>
 
-    <TextView
-        android:id="@+id/txtAcabCabelo"
+    <Button
+        android:id="@+id/btnCorInf"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:text="@string/txtCorInf"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBarba"
-        tools:text="@string/txtACabelo"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@id/btnBarba" />
 
-    <TextView
-        android:id="@+id/txtAcabBarba"
+    <Button
+        android:id="@+id/btnAcabCabelo"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/txtACabelo"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAcabCabelo"
-        tools:text="@string/txtAcabBarba"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@id/btnCorInf" />
 
-    <TextView
-        android:id="@+id/txtSobrancelha"
+
+    <Button
+        android:id="@+id/btnSob"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        android:text="@string/txtSobrancelha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAcabBarba"
-        tools:text="@string/txtSobrancelha"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@id/btnAcabCabelo" />
 
-    <TextView
-        android:id="@+id/txtSelagem"
+
+    <Button
+        android:id="@+id/btnCamuCabelo"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/btnSob"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSobrancelha"
-        tools:text="@string/txtSelagem"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:text="@string/txtCamuCabelo" />
 
-    <TextView
-        android:id="@+id/txtProgressiva"
+    <Button
+        android:id="@+id/btnSelagem"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/btnCamuCabelo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSelagem"
-        tools:text="@string/txtProgressiva"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:text="@string/txtSelagem" />
 
-    <TextView
-        android:id="@+id/txtCamuCabelo"
+    <Button
+        android:id="@+id/btnProgressiva"
         android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/btnSelagem"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProgressiva"
-        tools:text="@string/txtCamuCabelo"
-        android:textColor="@color/white"
-        android:background="@color/black"/>
+        android:text="@string/txtProgressiva" />
 
-    <TextView
-        android:id="@+id/txtCamuBarba"
-        android:layout_width="133dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/black"
-        android:textColor="@color/white"
+    <ListView
+
+
+        android:id="@+id/lista"
+        android:layout_width="205dp"
+        android:layout_height="433dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/txtCaraio"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCamuCabelo"
-        tools:text="@string/txtCamuBarba" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnProgressiva" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

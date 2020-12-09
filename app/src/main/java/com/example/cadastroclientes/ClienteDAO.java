@@ -51,7 +51,6 @@ while (cursor.moveToNext()){
     a.setTaper(cursor.getString(13));
     a.setObservacao(cursor.getString(14));
     clientes.add(a);
-    cursor.close();
 
 }
 return clientes;
@@ -96,5 +95,30 @@ return clientes;
         contentValues.put("observacao", cliente.getObservacao());
         banco.update("cliente", contentValues, "nome = ?", new String[]{cliente.getNome()});
     }
+    public List<Producao> obterControle(){
+        List<Producao> controle = new ArrayList<>();
+        Cursor cursor = banco.query("producao",new String[]{"id","servico"},null,null,null,null,null);
+
+        while   (cursor.moveToNext()){
+
+
+            Producao a = new Producao();
+            a.setId(cursor.getInt(0));
+            a.setServicoFeito(cursor.getString(1));
+            controle.add(a);
+
+        }
+        return controle;
+    }
+    public long inserirControle(Producao producao){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("servico",producao.getServicoFeito());
+        return  banco.insert("producao",null,contentValues);
+
+    }
+    public void produExcluir(Producao a){
+        banco.delete("producao","id =?",new String[]{a.getId().toString()});
+    }
+
 
 }

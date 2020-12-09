@@ -25,10 +25,6 @@ import java.util.List;
 
 public class ListarClientes extends AppCompatActivity implements Serializable {
 
-
-
-    private Conexao conexao;
-    private SQLiteDatabase db;
     private ListView  listView;
     private ClienteDAO dao;
     private List<Cliente> clientes;
@@ -100,11 +96,6 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         listView.invalidateViews();
     }
 
-    public void Adicionar(MenuItem item){
-        Intent St= new Intent(this, Servico.class);
-        startActivity(St);
-
-    }
     public void Excluir(MenuItem item){
         AdapterView.AdapterContextMenuInfo menuInfo =
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
