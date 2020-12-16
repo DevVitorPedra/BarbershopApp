@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,9 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CadastroClientes">
-        <activity android:name=".deuruim"></activity>
+        <activity android:name=".ExportImportDB"/>
         <activity android:name=".Controle" />
-        <activity android:name=".ControleServicos" />
         <activity android:name=".Agenda" />
         <activity android:name=".ExibirFotos" />
         <activity android:name=".ServicoAtual" />

@@ -1,9 +1,13 @@
 package com.example.cadastroclientes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -14,9 +18,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextClock;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,10 +31,13 @@ import java.util.List;
 public class Controle extends AppCompatActivity {
 
 
-    private EditText edtCaraio;
+
+    ServAdapter adapter;
+    private TextView txtCaraio;
+    private TextClock txtClock;
 
     private ClienteDAO dao;
-    private ListView lista;
+    private RecyclerView lista;
     private List<Producao> controle = new ArrayList<>(20);
     private Button servCorTes, servCorMaq,servBarba,servInf,servAcab,servSobrancelha, servSelagem,servProgressiva,servCamu;
 
@@ -40,7 +49,8 @@ public class Controle extends AppCompatActivity {
         setContentView(R.layout.activity_controle);
 
         lista = findViewById(R.id.lista);
-        edtCaraio =findViewById(R.id.txtCaraio);
+        txtCaraio =findViewById(R.id.txtCaraio);
+        txtClock = findViewById(R.id.txtClock);
 
         //buttons
         servCorTes = findViewById(R.id.btnCorTes);
@@ -55,88 +65,129 @@ public class Controle extends AppCompatActivity {
         dao = new ClienteDAO(this);
         controle = dao.obterControle();
 
-
-        ArrayAdapter<Producao> adaptadores = new ArrayAdapter<Producao>(this, android.R.layout.simple_list_item_1, controle);
-        lista.setAdapter(adaptadores);
-
+        configurarRecycler();
 
 
         registerForContextMenu(lista);
 
+
     }
+
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater i = new MenuInflater(this);
         i.inflate(R.menu.menu_controle, menu);
     }
+    public void configurarRecycler(){
+        lista = (RecyclerView) findViewById(R.id.lista);
+        LinearLayoutManager layoutManager =new LinearLayoutManager(this);
+        lista.setLayoutManager(layoutManager);
+
+        adapter = new ServAdapter(dao.obterControle());
+        lista.setAdapter(adapter);
+        lista.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+
+    }
+
+
 
     @Override
     public void onResume(){
         super.onResume();
-        controle= dao.obterControle();
-        controle.clear();
-        lista.invalidateViews();
-    }
-    public void apagar(MenuItem item){
-        AdapterView.AdapterContextMenuInfo menuInfo= (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        final Producao apagar = controle.get(menuInfo.position);
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("ATENÇÃO")
-                .setMessage("Deseja excluir este serviço?")
-                .setNegativeButton("NÂO",null)
-                .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        controle.remove(apagar);
-                        dao.produExcluir(apagar);
-                        lista.invalidateViews();
-
-
-
-                    }
-
-                }).create();
-
-
-        dialog.show();
-
 
     }
 
 
 
 
-    public void onClickBarba(){
+
+    public void onClickBarba(View view){
         Producao producao = new Producao();
-        producao.setServicoFeito(servBarba.getText().toString());
+        producao.setServicoFeito("Barba");
+        producao.setHora(txtClock.getText().toString());
         dao.inserirControle(producao);
         Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
         finish();
     }
-    public void onClickCorInf(){
+    public void onClickCorInf(View view){
         Producao producao = new Producao();
-        producao.setServicoFeito(servInf.getText().toString());
+        producao.setServicoFeito("Corte Infantil");
+        producao.setHora(txtClock.getText().toString());
         dao.inserirControle(producao);
         Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
         finish();
     }
 
     public void onClickCorTes(View view) {
-        edtCaraio.setText(servCorTes.getText());
+        Producao producao = new Producao();
+        producao.setServicoFeito("corte Tesoura");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
         Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+
 
     }
 
     public void onClickCorMaq(View view) {
         Producao producao = new Producao();
-        producao.setServicoFeito("Corte maquina ");
+        producao.setServicoFeito("Corte maquina");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
+        Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+    }
+
+    public void myClick(View view) {
+        int itemPosition = lista.getChildLayoutPosition(view);
+        String item = controle.get(itemPosition).getServicoFeito();
+        Toast.makeText(this,"item " + itemPosition,Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClickAcabamento(View view) {
+        Producao producao = new Producao();
+        producao.setServicoFeito("Acabamento");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
+        Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+    }
+
+    public void onClickSobrancelha(View view) {
+        Producao producao = new Producao();
+        producao.setServicoFeito("Sobrancelha");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
+        Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+    }
+
+    public void onClickCamuflagem(View view) {
+        Producao producao = new Producao();
+        producao.setServicoFeito("Camuflagem");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
+        Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+    }
+
+    public void onClickSelagem(View view) {
+        Producao producao = new Producao();
+        producao.setServicoFeito("Selagem");
+        producao.setHora(txtClock.getText().toString());
+        dao.inserirControle(producao);
+        Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+        finish();
+    }
+
+    public void onClickProgressiva(View view) {
+        Producao producao = new Producao();
+        producao.setServicoFeito("Progressiva");
+        producao.setHora(txtClock.getText().toString());
         dao.inserirControle(producao);
         Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
         finish();
     }
 
 }
-//todo
-//corrigir linha 88, esta dando erro porem tem a mesma linha na act listar

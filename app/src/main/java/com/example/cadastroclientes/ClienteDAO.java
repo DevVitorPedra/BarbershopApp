@@ -13,6 +13,7 @@ public class ClienteDAO {
     private SQLiteDatabase banco;
 
 
+
     public ClienteDAO(Context context){
         conexao = new Conexao(context);
         banco = conexao.getWritableDatabase();
@@ -97,7 +98,7 @@ return clientes;
     }
     public List<Producao> obterControle(){
         List<Producao> controle = new ArrayList<>();
-        Cursor cursor = banco.query("producao",new String[]{"id","servico"},null,null,null,null,null);
+        Cursor cursor = banco.query("producao",new String[]{"id","servico","hora"},null,null,null,null,null);
 
         while   (cursor.moveToNext()){
 
@@ -105,14 +106,17 @@ return clientes;
             Producao a = new Producao();
             a.setId(cursor.getInt(0));
             a.setServicoFeito(cursor.getString(1));
+            a.setHora(cursor.getString(2));
             controle.add(a);
 
         }
+        cursor.close();
         return controle;
     }
     public long inserirControle(Producao producao){
         ContentValues contentValues = new ContentValues();
         contentValues.put("servico",producao.getServicoFeito());
+        contentValues.put("hora",producao.getHora());
         return  banco.insert("producao",null,contentValues);
 
     }
@@ -120,5 +124,13 @@ return clientes;
         banco.delete("producao","id =?",new String[]{a.getId().toString()});
     }
 
+    public boolean excluir(int id){
+        return conexao.getWritableDatabase().delete("producao", "id = ?", new String[]{id + ""})>0;
+    }
+
+
+
 
 }
+//todo
+//fazer as alterações para guardar a foto tbm

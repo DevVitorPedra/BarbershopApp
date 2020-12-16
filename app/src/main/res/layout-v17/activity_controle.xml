@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:onClick="onClickCorMaq"
         android:text="@string/txtCMaquina"
+
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnCorTes" />
@@ -30,6 +31,7 @@
         android:id="@+id/btnBarba"
         android:layout_width="133dp"
         android:textSize="10sp"
+        android:onClick="onClickBarba"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/btnCorMaq"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +42,7 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:textSize="10sp"
+        android:onClick="onClickCorInf"
         android:text="@string/txtCorInf"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnBarba" />
@@ -50,6 +53,9 @@
         android:layout_height="wrap_content"
         android:text="@string/txtACabelo"
         android:textSize="10sp"
+        android:onClick="onClickAcabamento"
+        app:backgroundTint="@color/purple_500"
+        app:iconTint="@color/purple_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnCorInf" />
 
@@ -60,6 +66,7 @@
         android:textSize="10sp"
         android:layout_height="wrap_content"
         android:text="@string/txtSobrancelha"
+        android:onClick="onClickSobrancelha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnAcabCabelo" />
 
@@ -69,6 +76,7 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:textSize="10sp"
+        android:onClick="onClickCamuflagem"
         app:layout_constraintTop_toBottomOf="@id/btnSob"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/txtCamuCabelo" />
@@ -78,6 +86,7 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:textSize="10sp"
+        android:onClick="onClickSelagem"
         app:layout_constraintTop_toBottomOf="@id/btnCamuCabelo"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/txtSelagem" />
@@ -87,18 +96,22 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:textSize="10sp"
+        android:onClick="onClickProgressiva"
         app:layout_constraintTop_toBottomOf="@id/btnSelagem"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/txtProgressiva" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista"
-        android:layout_width="216dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_height="424dp"
+        android:layout_width="172dp"
+        android:layout_height="427dp"
+        android:background="@color/design_default_color_secondary_variant"
         android:onClick="myClick"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAcabCabelo"
         app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="@android:integer/status_bar_notification_info_maxnum"
         tools:listitem="@layout/item_list" />
 
 
@@ -106,9 +119,16 @@
         android:id="@+id/txtCaraio"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/lista"
-        app:layout_constraintStart_toStartOf="@+id/lista"
-        app:layout_constraintTop_toBottomOf="@+id/lista" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProgressiva" />
 
-
+    <TextClock
+        android:id="@+id/txtClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnProgressiva"
+        app:layout_constraintStart_toStartOf="@+id/btnProgressiva"
+        app:layout_constraintTop_toBottomOf="@+id/btnProgressiva"
+        tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,15 @@ package com.example.cadastroclientes;
 import java.io.Serializable;
 
 public class Producao extends Controle implements Serializable {
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    private String hora;
 
     private String  servicoFeito;
 

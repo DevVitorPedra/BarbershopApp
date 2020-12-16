@@ -1,5 +1,7 @@
 package com.example.cadastroclientes;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
@@ -18,6 +20,17 @@ public class Cliente implements Serializable {
     private String Acabamento;
     private String Taper;
     private String Observacao;
+    private Bitmap imagem;
+
+    public Bitmap getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Bitmap imagem) {
+        this.imagem = imagem;
+    }
+
+
 
     public String getData() {
         return Data;

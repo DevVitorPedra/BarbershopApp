@@ -55,4 +55,7 @@
     <string name="txtProgressiva">Progressiva</string>
     <string name="txtCamuCabelo">Camuflagem</string>
     <string name="txtCorInf">Corte Infantil</string>
+    <string name="btnImport">Importar BD</string>
+    <string name="btn_Export">Exportar BD</string>
+    <string name="btn_Bancos">Bancos</string>
 </resources>

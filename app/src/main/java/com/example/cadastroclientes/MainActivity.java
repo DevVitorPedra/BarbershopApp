@@ -1,5 +1,6 @@
 package com.example.cadastroclientes;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,14 +8,19 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static android.view.View.*;
+
 public class MainActivity extends AppCompatActivity {
-    Button btnAdd, btnAtualizar, btnPesquisar, btnControle, btnAgenda;
+    Button btnAdd, btnAtualizar, btnPesquisar, btnControle, btnAgenda, btnImportar;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
     }
 
@@ -30,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
         Intent CS = new Intent(MainActivity.this, Controle.class);
         startActivity(CS);
     }
+    public void Bancos(View v) {
+        Intent Import = new Intent(MainActivity.this,ExportImportDB.class);
+        startActivity(Import);
 
+    }
 
 }
 

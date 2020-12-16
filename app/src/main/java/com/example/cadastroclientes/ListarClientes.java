@@ -25,7 +25,7 @@ import java.util.List;
 
 public class ListarClientes extends AppCompatActivity implements Serializable {
 
-    private ListView  listView;
+    private ListView listView;
     private ClienteDAO dao;
     private List<Cliente> clientes;
     private List<Cliente> clientesFiltrados = new ArrayList<>();
@@ -39,12 +39,13 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         dao = new ClienteDAO(this);
         clientes = dao.obterTodos();
         clientesFiltrados.addAll(clientes);
-        ArrayAdapter<Cliente> adaptador = new ArrayAdapter<Cliente>(this, android.R.layout.simple_list_item_1,clientesFiltrados);
+        ArrayAdapter<Cliente> adaptador = new ArrayAdapter<Cliente>(this, android.R.layout.simple_list_item_1, clientesFiltrados);
         listView.setAdapter(adaptador);
 
-       registerForContextMenu(listView);
+        registerForContextMenu(listView);
     }
-    public boolean onCreateOptionsMenu(Menu menu){
+
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater i = getMenuInflater();
         i.inflate(R.menu.menu_principal, menu);
 
@@ -66,45 +67,48 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
 
 
     }
+
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater i = new MenuInflater(this);
         i.inflate(R.menu.menu_contexto, menu);
     }
-    public void ProcurarClientes(String nome){
+
+    public void ProcurarClientes(String nome) {
         clientesFiltrados.clear();
-        for (Cliente a : clientes ){
-            if (a.getNome().toLowerCase().contains(nome.toLowerCase())){
+        for (Cliente a : clientes) {
+            if (a.getNome().toLowerCase().contains(nome.toLowerCase())) {
                 clientesFiltrados.add(a);
             }
         }
         listView.invalidateViews();
     }
 
-    public void Cadastrar(MenuItem menu){
-        Intent it = new Intent(this,CadastroClientes.class);
+    public void Cadastrar(MenuItem menu) {
+        Intent it = new Intent(this, CadastroClientes.class);
         startActivity(it);
 
 
     }
+
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
-        clientes= dao.obterTodos();
+        clientes = dao.obterTodos();
         clientesFiltrados.clear();
         clientesFiltrados.addAll(clientes);
         listView.invalidateViews();
     }
 
-    public void Excluir(MenuItem item){
+    public void Excluir(MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo =
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        final Cliente clienteExcluir= clientesFiltrados.get(menuInfo.position);
+        final Cliente clienteExcluir = clientesFiltrados.get(menuInfo.position);
 
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("ATENÇÃO")
                 .setMessage("Deseja excluir este cliente?")
-                .setNegativeButton("NÂO",null)
+                .setNegativeButton("NÂO", null)
                 .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -113,7 +117,6 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
                         dao.Excluir(clienteExcluir);
                         listView.invalidateViews();
 
-                        
 
                     }
 
@@ -123,16 +126,18 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         dialog.show();
 
     }
-    public void atualizar(MenuItem item){
+
+    public void atualizar(MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo =
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        final Cliente clienteAtualizar= clientesFiltrados.get(menuInfo.position);
+        final Cliente clienteAtualizar = clientesFiltrados.get(menuInfo.position);
 
-        Intent At= new Intent(this, CadastroClientes.class);
-        At.putExtra("cliente",clienteAtualizar);
+        Intent At = new Intent(this, CadastroClientes.class);
+        At.putExtra("cliente", clienteAtualizar);
         startActivity(At);
 
     }
+
     public void salvarServico(MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo =
                 (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -150,12 +155,8 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         final Cliente clienteAtualizar = clientesFiltrados.get(menuInfo.position);
 
         Intent At = new Intent(this, ServicoAtual.class);
-        At.putExtra("cliente",clienteAtualizar);
+        At.putExtra("cliente", clienteAtualizar);
         startActivity(At);
     }
 }
-/*
-todo
-montar paginaa para ver os serviços dos clientes, verificar serviços duplicados
-nome na tabela serviço deve ser unico
-*/
+

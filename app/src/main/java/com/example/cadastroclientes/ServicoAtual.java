@@ -20,15 +20,7 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
     private Cliente cliente;
     private ClienteDAO dao;
     private SQLiteDatabase banco;
-    private TextView edtNome, edtTopete,edtTopo,edtLateral, edtTextura, edtEncaixe, edtAcabamento, edtTaper,edtObs,edtData;
-    private Button btnShow;
-
-
-
-
-
-
-
+    private TextView edtNome, edtTopete, edtTopo, edtLateral, edtTextura, edtEncaixe, edtAcabamento, edtTaper, edtObs, edtData;
 
 
     @Override
@@ -37,12 +29,8 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_servico_atual);
         dao = new ClienteDAO(this);
 
-
-
-        btnShow = findViewById(R.id.btnFotoLateral);
-
         edtNome = findViewById(R.id.edtNome);
-        edtData =findViewById(R.id.edtData);
+        edtData = findViewById(R.id.edtData);
         edtTopete = findViewById(R.id.edtTopete);
         edtTopo = findViewById(R.id.edtTopo);
         edtLateral = findViewById(R.id.edtLateral);
@@ -68,18 +56,10 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
             edtObs.setText(cliente.getObservacao());
 
 
-btnShow.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent it = new Intent(ServicoAtual.this, ExibirFotos.class);
-        startActivity(it);
-
-    }
-});
 
 
-        }else{
-            finish();
         }
     }
 }
+//todo
+//fazer a inserção da foto aki tbm

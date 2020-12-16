@@ -232,28 +232,4 @@
         tools:text="@string/txt_Data" />
 
 
-    <Button
-        android:id="@+id/btnFotoLateral"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="140dp"
-        android:text="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDataeHora" />
-
-    <Button
-        android:id="@+id/btnFotoNuca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="160dp"
-        android:text="1"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFotoLateral" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
