@@ -131,6 +131,11 @@ return clientes;
 
 
 
+
+
+
+
+
 }
 //todo
 //fazer as alterações para guardar a foto tbm

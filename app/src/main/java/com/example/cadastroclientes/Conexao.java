@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class Conexao extends SQLiteOpenHelper {
+    ClienteDAO dao;
 
     private static final String name = "banco.db";
     private static final int version = 1;
@@ -32,6 +33,10 @@ public class Conexao extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    }
+        }
+
+
+
+
 }
 

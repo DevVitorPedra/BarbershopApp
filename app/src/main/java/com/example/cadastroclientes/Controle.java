@@ -25,6 +25,8 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class Controle extends AppCompatActivity {
 
 
     ServAdapter adapter;
-    private TextView txtCaraio;
+    private TextView txtTotal;
     private TextClock txtClock;
 
     private ClienteDAO dao;
@@ -49,7 +51,7 @@ public class Controle extends AppCompatActivity {
         setContentView(R.layout.activity_controle);
 
         lista = findViewById(R.id.lista);
-        txtCaraio =findViewById(R.id.txtCaraio);
+        txtTotal =findViewById(R.id.txtTotal);
         txtClock = findViewById(R.id.txtClock);
 
         //buttons
@@ -62,6 +64,7 @@ public class Controle extends AppCompatActivity {
         servProgressiva = findViewById(R.id.btnProgressiva);
         servCamu = findViewById(R.id.btnCamuCabelo);
 
+
         dao = new ClienteDAO(this);
         controle = dao.obterControle();
 
@@ -69,6 +72,13 @@ public class Controle extends AppCompatActivity {
 
 
         registerForContextMenu(lista);
+
+
+size();
+
+
+
+
 
 
     }
@@ -88,6 +98,7 @@ public class Controle extends AppCompatActivity {
         lista.setAdapter(adapter);
         lista.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
+
     }
 
 
@@ -95,6 +106,7 @@ public class Controle extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+
 
     }
 
@@ -187,7 +199,12 @@ public class Controle extends AppCompatActivity {
         producao.setHora(txtClock.getText().toString());
         dao.inserirControle(producao);
         Toast.makeText(this,"Serviço inserido",Toast.LENGTH_SHORT ).show();
+
         finish();
+    }
+    public void size(){
+     int i = adapter.getItemCount();
+     txtTotal.setText("Total de serviços = "+ i);
     }
 
 }

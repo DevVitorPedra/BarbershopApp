@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="#121212"
     tools:context=".Controle">
 
     <Button
@@ -116,10 +117,12 @@
 
 
     <TextView
-        android:id="@+id/txtCaraio"
+        android:id="@+id/txtTotal"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:background="#1f2b24"
+        app:layout_constraintEnd_toEndOf="@+id/lista"
         app:layout_constraintTop_toBottomOf="@+id/btnProgressiva" />
 
     <TextClock
@@ -128,7 +131,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnProgressiva"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="@+id/btnProgressiva"
         app:layout_constraintTop_toBottomOf="@+id/btnProgressiva"
+        app:layout_constraintVertical_bias="0.0"
         tools:visibility="invisible" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,12 +62,14 @@ public class ServAdapter extends RecyclerView.Adapter<ServHolder> {
 
 
 
+
     }
 
 
     @Override
     public int getItemCount() {
         return controle.size();
+
 
 
     }
@@ -81,6 +83,11 @@ public class ServAdapter extends RecyclerView.Adapter<ServHolder> {
         controle.remove(position);
         notifyDataSetChanged(
         );
+
+
+
+        }
+
     }
 
-}
+
