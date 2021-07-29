@@ -22,7 +22,6 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
     private SQLiteDatabase banco;
     private TextView edtNome, edtTopete, edtTopo, edtLateral, edtTextura, edtEncaixe, edtAcabamento, edtTaper, edtObs, edtData;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +40,9 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
         edtObs = findViewById(R.id.edtObs);
 
 
+
+
+
         Intent At = getIntent();
         if (At.hasExtra("cliente")) {
             cliente = (Cliente) At.getSerializableExtra("cliente");
@@ -54,6 +56,8 @@ public class ServicoAtual extends AppCompatActivity implements Serializable {
             edtAcabamento.setText(cliente.getAcabamento());
             edtTaper.setText(cliente.getTaper());
             edtObs.setText(cliente.getObservacao());
+
+
 
 
 

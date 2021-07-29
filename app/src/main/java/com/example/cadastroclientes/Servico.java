@@ -95,7 +95,7 @@ public class Servico extends AppCompatActivity implements Serializable {
         ArrayAdapter<String> topoAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,topo);
         spinnTopo.setAdapter(topoAdapter);
 
-        String[] lateral = {"Degra 0","Degra 1","1 dedo","dedo e meio","2 dedos","3 dedos", "4 dedos"};
+        String[] lateral = {"Degra 0","Degra 1","maquina 1", "maquina 2", "maquina 3","1 dedo","dedo e meio","2 dedos","3 dedos", "4 dedos"};
         ArrayAdapter<String> lateralAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,lateral);
         spinnLateral.setAdapter(lateralAdapter);
         String[] textura = {"Sem texturas", "dentada nas pontas","redução de volume","45º", "deep cut"};
@@ -157,9 +157,6 @@ public class Servico extends AppCompatActivity implements Serializable {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG,100, stream);
-            byte[] byteArray = stream.toByteArray();
             imgFoto.setImageBitmap(bitmap);
 
 

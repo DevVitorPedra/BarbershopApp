@@ -23,6 +23,62 @@ public class Cliente implements Serializable {
     private String Acabamento;
     private String Taper;
     private String Observacao;
+    private String BrbComp;
+    private String BrbLat;
+
+    public String getBrbComp() {
+        return BrbComp;
+    }
+
+    public void setBrbComp(String brbComp) {
+        BrbComp = brbComp;
+    }
+
+    public String getBrbLat() {
+        return BrbLat;
+    }
+
+    public void setBrbLat(String brbLat) {
+        BrbLat = brbLat;
+    }
+
+    public String getBrbBigode() {
+        return BrbBigode;
+    }
+
+    public void setBrbBigode(String brbBigode) {
+        BrbBigode = brbBigode;
+    }
+
+    public String getBrbLBochecha() {
+        return BrbLBochecha;
+    }
+
+    public void setBrbLBochecha(String brbLBochecha) {
+        BrbLBochecha = brbLBochecha;
+    }
+
+    public String getBrbLGogo() {
+        return BrbLGogo;
+    }
+
+    public void setBrbLGogo(String brbLGogo) {
+        BrbLGogo = brbLGogo;
+    }
+
+    public String getBrbDetalhes() {
+        return BrbDetalhes;
+    }
+
+    public void setBrbDetalhes(String brbDetalhes) {
+        BrbDetalhes = brbDetalhes;
+    }
+
+    private String BrbBigode;
+    private String BrbLBochecha;
+    private String BrbLGogo;
+    private String BrbDetalhes;
+
 
 
     public Image getImagem() {

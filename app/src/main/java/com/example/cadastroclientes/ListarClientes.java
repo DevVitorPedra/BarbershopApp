@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -40,7 +42,19 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         clientes = dao.obterTodos();
         clientesFiltrados.addAll(clientes);
         ArrayAdapter<Cliente> adaptador = new ArrayAdapter<Cliente>(this, android.R.layout.simple_list_item_1, clientesFiltrados);
+        /*
+        ORDENAR A LISTA POR ORDEM ALFABÉTICA
+        Collections.sort(clientesFiltrados, new Comparator<Cliente>() {
+            @Override
+            public int compare(Cliente o1, Cliente o2) {
+                return 0;
+            }
+        });
+        */
         listView.setAdapter(adaptador);
+
+
+
 
         registerForContextMenu(listView);
     }
@@ -155,6 +169,27 @@ public class ListarClientes extends AppCompatActivity implements Serializable {
         final Cliente clienteAtualizar = clientesFiltrados.get(menuInfo.position);
 
         Intent At = new Intent(this, ServicoAtual.class);
+        At.putExtra("cliente", clienteAtualizar);
+        startActivity(At);
+    }
+
+    public void salvarBarba(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo menuInfo =
+                (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        final Cliente clienteAtualizar = clientesFiltrados.get(menuInfo.position);
+
+        Intent At = new Intent(this, ClienteBarba.class);
+        At.putExtra("cliente", clienteAtualizar);
+        startActivity(At);
+
+    }
+
+    public void BarbaCadastrada(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo menuInfo =
+                (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        final Cliente clienteAtualizar = clientesFiltrados.get(menuInfo.position);
+
+        Intent At = new Intent(this, BarbaAtual.class);
         At.putExtra("cliente", clienteAtualizar);
         startActivity(At);
     }

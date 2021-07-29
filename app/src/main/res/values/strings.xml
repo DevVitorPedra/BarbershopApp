@@ -22,8 +22,8 @@
     <string name="edt_obs">Observações</string>
     <string name="Search">Pesquisar</string>
     <string name="menu_Cadastrar">Cadastrar</string>
-    <string name="menu_Add">Adicionar Serviço</string>
-    <string name="menu_Atual">Atualizar Serviço</string>
+    <string name="menu_Add">Adicionar Corte</string>
+    <string name="menu_Atual">Atualizar Corte</string>
     <string name="menu_Excluir">Excluir Cliente</string>
     <string name="txt_Laterais">Comprimento Lateral</string>
     <string name="txt_Topo">Comprimento Topo</string>
@@ -58,4 +58,22 @@
     <string name="btnImport">Importar BD</string>
     <string name="btn_Export">Exportar BD</string>
     <string name="btn_Bancos">Bancos</string>
+    <string name="txtBarbaComp">Comprimento</string>
+    <string name="txtBrbLat">Laterais</string>
+    <string name="txtBigode">Bigode</string>
+    <string name="txtBochecha">Linha Bochecha</string>
+    <string name="txtLinhaGogo">Linha Pescoço</string>
+    <string name="txtDetalhes">Detalhes</string>
+    <string name="menu_Barba">Atualizar Barba</string>
+    <string name="menu_VerServ">Ver Corte</string>
+    <string name="menu_Update">Atualizar cadastro</string>
+    <string name="txtBarba_comp">Comprimento Barba</string>
+    <string name="txt_BarbaLat">Laterais Barba</string>
+    <string name="txt_DetBarba">Detalhes Barba</string>
+    <string name="menu_VerBarba">Ver Barba</string>
+    <string name="Workshop">Workshop</string>
+    <string name="pesquisar">Pesquisar Clientes</string>
+    <string name="adicionar">Adicionar Clientes</string>
+    <string name="agenda">Verificar Agenda</string>
+    <string name="controle">Controle de Serviços</string>
 </resources>

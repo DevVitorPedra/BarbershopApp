@@ -3,10 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:title="Atualizar cadastro" android:onClick="atualizar"/>
-    <item android:title="Ver Serviço" android:onClick="ServicoCadastrado"/>
+    <item android:title="@string/menu_Update" android:onClick="atualizar"/>
+    <item android:title="@string/menu_VerServ" android:onClick="ServicoCadastrado"/>
     <item android:title="@string/menu_Atual" android:onClick="salvarServico"  />
+<!--    <item android:title="@string/menu_Barba" android:onClick="salvarBarba"/>-->
     <item android:title="@string/menu_Excluir" android:onClick="Excluir" />
+<!--<item android:title="@string/menu_VerBarba" android:onClick="BarbaCadastrada"/>-->
 
 
 

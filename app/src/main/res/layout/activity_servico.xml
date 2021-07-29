@@ -33,7 +33,6 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -55,8 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/edt_ObsServ"
-        app:layout_constraintEnd_toEndOf="@+id/spinnTaper"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@id/spinnTaper" />
 
     <Spinner
@@ -164,13 +162,11 @@
         android:id="@+id/textView8"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
 
         android:layout_marginTop="10dp"
         android:text="@string/txt_Taper"
-        app:layout_constraintEnd_toStartOf="@+id/spinnDetalhe"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinnLateral"
+        app:layout_constraintStart_toStartOf="@+id/spinnLateral"
         app:layout_constraintTop_toBottomOf="@+id/spinnLateral" />
 
     <EditText
@@ -232,6 +228,7 @@
         android:layout_width="65dp"
         android:layout_height="54dp"
         android:layout_marginTop="30dp"
+        android:visibility="gone"
         app:icon="@android:drawable/ic_menu_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSalvarServ"

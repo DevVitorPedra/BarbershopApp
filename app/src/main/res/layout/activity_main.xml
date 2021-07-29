@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:onClick="Pesquisar"
-        android:text="Pesquisar Clientes"
+        android:text="@string/pesquisar"
         android:textSize="18sp"
         android:textStyle="italic"
         app:cornerRadius="10dp"
@@ -27,7 +27,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="50dp"
         android:onClick="Cadastrar"
-        android:text="Adicionar Clientes"
+        android:text="@string/adicionar"
         android:textSize="18sp"
         android:textStyle="italic"
         app:cornerRadius="10dp"
@@ -40,7 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="50dp"
-        android:text="Verificar Agenda"
+        android:onClick="Agenda"
+        android:text="@string/agenda"
         android:textSize="18sp"
         android:textStyle="italic"
         app:cornerRadius="10dp"
@@ -57,7 +58,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="50dp"
         android:onClick="Controle"
-        android:text="Controle de Serviços"
+        android:text="@string/controle"
         android:textSize="18sp"
         android:textStyle="italic"
         app:cornerRadius="10dp"
@@ -68,5 +69,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgenda" />
 
+    <Button
+        android:id="@+id/btnAprendizado"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:onClick="Pesquisar"
+        android:text="@string/Workshop"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:cornerRadius="10dp"
+        app:icon="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnControle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

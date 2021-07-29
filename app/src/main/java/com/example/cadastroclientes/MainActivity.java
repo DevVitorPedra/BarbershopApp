@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         Intent CS = new Intent(MainActivity.this, Controle.class);
         startActivity(CS);
     }
+    public void Agenda(View view){
+        Intent Ag = new Intent(MainActivity.this, Agenda.class);
+        startActivity(Ag);
+
+    }
 
 }
 
